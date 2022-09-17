@@ -77,7 +77,10 @@ class MainActivity : ComponentActivity() {
  */
 
 /**
- * EXAMPLE why we need flow with suspend function. Here in this example we are making api calls for single user id and creating list of users so we can access them in our UI.
+ * WHY FLOW
+ * Here is why we need flow with suspend functions. Here in this example we are making api calls for single user id and creating list of users so we can access them in our UI.
+ *
+ * If you notice that we are receiving list of users after 5 seconds. While if we use flow instead than we would be able to access user when that api calls are made. So we don't need to wait for whole list of users.
  */
 
 //This function returns a list of users. It will take 5 seconds to get list of users.

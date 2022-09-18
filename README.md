@@ -24,3 +24,14 @@ Kotlin Flow operations: refer brach for each operation
 <b>WHY FLOW:</b> refer branch <i>why_flow</i>
 Here is why we need flow with suspend functions. Here in this example we are making api calls for single user id and creating list of users so we can access them in our UI.
 If you notice that we are receiving list of users after 5 seconds. While if we use flow instead than we would be able to access user when that api response are available. So we don't need to wait for whole list of users.
+
+<b>Branch: simple_flow</b>
+- We can add multiple collectors to flow. If we are using cold flow and collector join in middle of emissions then it will receive values from start and continue receive emissions till end. 
+
+- There is no specific method to cancel flow instead we are using coroutine scope to cancel collectors and it will stop producing emissions. In short, If there is no collectors than producer will not produce any emissions. 
+
+ <b>coroutineScope.cancel():</b> It will cancel the all coroutines for that scope but we won't be able to start that coroutins again. Because it is also cancel that job we are in. 
+ 
+ <b>coroutineScope.coroutineContext.cancelChildren():</b> It will cancel all the children from that scope and we will be able to start that coroutine again. 
+ 
+Note from SO: Instead of using CoroutineScope for cancelling all of the launched jobs in it, you may want to use the underlying CoroutineContext with its cancelChildren() method which doesn't affect the Job state (which is not true for plain cancel() method) and allows to continue launching new coroutines after being invoked.

@@ -2,9 +2,9 @@
 Kotlin Flow operations: refer brach for each operation
 <ul>
 <li>Why we need Flow -> <i>why_flow</i></li>
-<li>Basic example</li>
-<li>Catch exceptions</li>
+<li>Basic example -> <i>simple_flow</i></li>
 <li>Operators/Intermediaries</li>
+<li>Catch exceptions</li>
 <li>Switching context</li>
 </ul>
 
